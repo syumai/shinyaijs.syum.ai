@@ -54,10 +54,10 @@ export default function Quiz() {
   };
 
   const questions = [
-    <Question1 onAnswer={handleAnswer} answer={answers[0]} />,
-    <Question2 onAnswer={handleAnswer} answer={answers[1]} />,
-    <Question3 onAnswer={handleAnswer} answer={answers[2]} />,
-    <Question4 onAnswer={handleAnswer} answer={answers[3]} />,
+    <Question1 key={0} onAnswer={handleAnswer} answer={answers[0]} />,
+    <Question2 key={1} onAnswer={handleAnswer} answer={answers[1]} />,
+    <Question3 key={2} onAnswer={handleAnswer} answer={answers[2]} />,
+    <Question4 key={3} onAnswer={handleAnswer} answer={answers[3]} />,
   ];
 
   if (score !== null) {

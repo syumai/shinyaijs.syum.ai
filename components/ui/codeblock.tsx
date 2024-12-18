@@ -37,7 +37,7 @@ export function CodeBlock({
       const node = await highlight(children, lang);
       setNodes(node);
     })();
-  }, []);
+  }, [children, lang]);
 
   return <Card className="p-2.5 text-sm">{nodes ?? <p>Loading...</p>}</Card>;
 }

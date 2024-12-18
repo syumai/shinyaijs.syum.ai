@@ -1,0 +1,12 @@
+main = ".worker-next/index.mjs"
+name = "shinyaijs"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".worker-next/assets"
+binding = "ASSETS"
+
+[[kv_namespaces]]
+binding = "NEXT_CACHE_WORKERS_KV"
+id = "b19305a763fe487a9ed361159a45ff10"

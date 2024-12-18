@@ -11,6 +11,7 @@ type Props = {
 
 const options = [0, 1, 2, 3, 4] as const;
 const isOption = (value: number): value is (typeof options)[number] =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   options.includes(value as any);
 
 export default function Question2({ onAnswer, answer }: Props) {
