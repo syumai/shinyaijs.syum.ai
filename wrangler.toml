@@ -10,3 +10,8 @@ binding = "ASSETS"
 [[kv_namespaces]]
 binding = "NEXT_CACHE_WORKERS_KV"
 id = "b19305a763fe487a9ed361159a45ff10"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "shinyaijs"
+database_id = "edad9ad8-8b7f-47f8-a206-8e7d3400212d"

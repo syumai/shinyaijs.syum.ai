@@ -31,7 +31,9 @@ export default function Quiz() {
     undefined,
     undefined,
   ]);
-  const [score, setScore] = useState<number | null>(null);
+  const [result, setResult] = useState<
+    Awaited<ReturnType<typeof submitEvents1Answers>> | undefined
+  >(undefined);
 
   const handleAnswer = useCallback(
     (answer: Answers[number]) => {
@@ -49,7 +51,7 @@ export default function Quiz() {
       setCurrentQuestion((prev) => prev + 1);
     } else {
       const result = await submitEvents1Answers(answers);
-      setScore(result.score);
+      setResult(result);
     }
   };
 
@@ -60,8 +62,8 @@ export default function Quiz() {
     <Question4 key={3} onAnswer={handleAnswer} answer={answers[3]} />,
   ];
 
-  if (score !== null) {
-    return <Result score={score} />;
+  if (result !== undefined) {
+    return <Result result={result} eventId={1} />;
   }
 
   return (
