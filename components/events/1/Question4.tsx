@@ -1,6 +1,9 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Answers } from "./quiz";
+import { Card } from "@/components/ui/card";
+import { CodeBlock } from "@/components/ui/codeblock";
+import { Code } from "@/components/ui/code";
 
 type Props = {
   onAnswer: (answer: Answers[3]) => void;
@@ -19,9 +22,31 @@ export default function Question4({ onAnswer, answer }: Props) {
     onAnswer(value);
   };
   return (
-    <div>
-      <h2 className="text-xl font-semibold mb-2">問題4</h2>
-      <p className="mb-4">A, B, C, Dのいずれかを選択してください。</p>
+    <div className="space-y-4">
+      <Card className="p-6 space-y-4">
+        <h1 className="text-2xl font-bold">Question 4</h1>
+        <p>
+          以下のコードの出力結果は以下の選択肢 A, B, C, D のうちどれでしょうか？
+        </p>
+        <CodeBlock lang="javascript">
+          {`const a = 010;
+const b = Number("010");
+const c = Number("0010");
+console.log(a, b, c);`}
+        </CodeBlock>
+        <p>
+          A: <Code>10 10 10</Code>
+        </p>
+        <p>
+          B: <Code>8 10 10</Code>
+        </p>
+        <p>
+          C: <Code>8 8 10</Code>
+        </p>
+        <p>
+          D: <Code>8 8 8</Code>
+        </p>
+      </Card>
       <RadioGroup onValueChange={onValueChange} value={answer}>
         {["A", "B", "C", "D"].map((option) => (
           <div key={option} className="flex items-center space-x-2">

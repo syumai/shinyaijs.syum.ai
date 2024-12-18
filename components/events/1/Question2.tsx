@@ -1,6 +1,8 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Answers } from "./quiz";
+import { Card } from "@/components/ui/card";
+import { CodeBlock } from "@/components/ui/codeblock";
 
 type Props = {
   onAnswer: (answer: Answers[1]) => void;
@@ -20,9 +22,19 @@ export default function Question2({ onAnswer, answer }: Props) {
     onAnswer(num);
   };
   return (
-    <div>
-      <h2 className="text-xl font-semibold mb-2">問題2</h2>
-      <p className="mb-4">0から5の数字を選択してください。</p>
+    <div className="space-y-4">
+      <Card className="p-6 space-y-4">
+        <h1 className="text-2xl font-bold">Question 2</h1>
+        <p>
+          以下のclass宣言について、有効なもの（ランタイムエラーが発生しないもの）はいくつあるでしょうか？
+        </p>
+        <CodeBlock lang="javascript">
+          {`new class extends (function () {}) {};
+new class extends (() => {}) {};
+new class extends (async function() {}) {};
+new class extends ({}.toString) {};`}
+        </CodeBlock>
+      </Card>
       <RadioGroup
         onValueChange={onValueChange}
         value={answer !== undefined ? String(answer) : undefined}

@@ -20,12 +20,6 @@ const isEmpty = (value: string[] | number | string | undefined): boolean => {
   if (Array.isArray(value)) {
     return value.some((v) => v === "");
   }
-  if (value === 0) {
-    return false;
-  }
-  if (value === "") {
-    return true;
-  }
   return false;
 };
 

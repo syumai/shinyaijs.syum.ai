@@ -1,6 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
+import { Card } from "@/components/ui/card";
 import { Answers } from "./quiz";
+import { CodeBlock } from "@/components/ui/codeblock";
+import { Code } from "@/components/ui/code";
 
 type Props = {
   onAnswer: (answer: Answers[0]) => void;
@@ -17,9 +19,25 @@ export default function Question1({ onAnswer, answer = defaultAnswer }: Props) {
   };
 
   return (
-    <div>
-      <h2 className="text-xl font-semibold mb-2">問題1</h2>
-      <p className="mb-4">以下の4つの入力欄に回答を入力してください。</p>
+    <div className="space-y-4">
+      <Card className="p-6 space-y-4">
+        <h1 className="text-2xl font-bold">Question 1</h1>
+        <p>
+          以下のJavaScriptのコードについて、
+          <Code>?</Code>
+          の部分を任意の英数字に置き換えて、有効となるものを4つ挙げてください。
+        </p>
+        <p>
+          実行については、ファイル名を
+          <Code>script.mjs</Code>
+          とし、Node.jsによって
+          <Code>node script.mjs</Code>
+          のコマンドで実行する (Moduleとして実行する) こととします。
+        </p>
+        <CodeBlock lang="javascript">
+          {`? function () { console.log("Hello!"); };`}
+        </CodeBlock>
+      </Card>
       {answer.map((input, index) => (
         <Input
           key={index}
