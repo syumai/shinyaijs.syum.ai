@@ -1,5 +1,8 @@
 # shinyaijs.syum.ai
 
+* event page for #shinyaijs.
+* components are based on [shadcn-ui](https://ui.shadcn.com/).
+
 ## Getting Started
 
 First, run the development server:

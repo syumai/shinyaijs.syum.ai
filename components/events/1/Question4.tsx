@@ -2,7 +2,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Answers } from "./quiz";
 import { Card } from "@/components/ui/card";
-import { CodeBlock } from "@/components/ui/codeblock";
+import { CodeBlock } from "@/components/codeblock";
 import { Code } from "@/components/ui/code";
 
 type Props = {

@@ -5,7 +5,7 @@ import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import { useLayoutEffect, useState, Fragment } from "react";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { codeToHast } from "shiki/bundle/web";
-import { Card } from "./card";
+import { Card } from "./ui/card";
 
 async function highlight(code: string, lang: BundledLanguage) {
   const out = await codeToHast(code, {

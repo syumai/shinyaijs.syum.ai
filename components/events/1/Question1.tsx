@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Answers } from "./quiz";
-import { CodeBlock } from "@/components/ui/codeblock";
+import { CodeBlock } from "@/components/codeblock";
 import { Code } from "@/components/ui/code";
 
 type Props = {
