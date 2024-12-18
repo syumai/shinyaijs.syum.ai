@@ -39,5 +39,5 @@ export function CodeBlock({
     })();
   }, [children, lang]);
 
-  return <Card className="p-2.5 text-sm">{nodes ?? <p>Loading...</p>}</Card>;
+  return <Card className="p-2.5 text-sm">{nodes ?? <p>{children}</p>}</Card>;
 }

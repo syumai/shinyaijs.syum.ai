@@ -62,14 +62,14 @@ export default function Quiz() {
     <Question4 key={3} onAnswer={handleAnswer} answer={answers[3]} />,
   ];
 
-  if (result !== undefined) {
+  if (result) {
     return <Result result={result} eventId={1} />;
   }
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-4">
-        Shinyai.js #1 クイズ {currentQuestion + 1}/4
+        JavaScriptクイズ@Shinyai.js 第1回 {currentQuestion + 1}/4
       </h1>
       {questions[currentQuestion]}
       <Button
