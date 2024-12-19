@@ -27,7 +27,7 @@ export default function Question2({ onAnswer, answer }: Props) {
       <Card className="p-4 space-y-4">
         <h1 className="text-2xl font-bold">Question 2</h1>
         <p>
-          以下のclass宣言について、有効なもの（ランタイムエラーが発生しないもの）はいくつあるでしょうか？
+          以下のclass式について、有効なもの（ランタイムエラーが発生しないもの）はいくつあるでしょうか？
         </p>
         <CodeBlock lang="javascript">
           {`new class extends (function () {}) {};
