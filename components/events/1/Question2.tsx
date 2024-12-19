@@ -24,7 +24,7 @@ export default function Question2({ onAnswer, answer }: Props) {
   };
   return (
     <div className="space-y-4">
-      <Card className="p-6 space-y-4">
+      <Card className="p-4 space-y-4">
         <h1 className="text-2xl font-bold">Question 2</h1>
         <p>
           以下のclass宣言について、有効なもの（ランタイムエラーが発生しないもの）はいくつあるでしょうか？
@@ -32,7 +32,7 @@ export default function Question2({ onAnswer, answer }: Props) {
         <CodeBlock lang="javascript">
           {`new class extends (function () {}) {};
 new class extends (() => {}) {};
-new class extends (async function() {}) {};
+new class extends (async function () {}) {};
 new class extends ({}.toString) {};`}
         </CodeBlock>
       </Card>

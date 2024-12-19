@@ -20,7 +20,7 @@ export default function Question1({ onAnswer, answer = defaultAnswer }: Props) {
 
   return (
     <div className="space-y-4">
-      <Card className="p-6 space-y-4">
+      <Card className="p-4 space-y-4">
         <h1 className="text-2xl font-bold">Question 1</h1>
         <p>
           以下のJavaScriptのコードについて、

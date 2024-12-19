@@ -24,7 +24,7 @@ export default function Question4({ onAnswer, answer }: Props) {
   };
   return (
     <div className="space-y-4">
-      <Card className="p-6 space-y-4">
+      <Card className="p-4 space-y-4">
         <h1 className="text-2xl font-bold">Question 4</h1>
         <p>
           以下のコードの出力結果は以下の選択肢 A, B, C, D のうちどれでしょうか？
