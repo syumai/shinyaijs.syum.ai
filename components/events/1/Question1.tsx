@@ -45,6 +45,8 @@ export default function Question1({ onAnswer, answer = defaultAnswer }: Props) {
           onChange={(e) => handleChange(index, e.target.value)}
           placeholder={`回答 ${index + 1}`}
           className="mb-2"
+          autoCorrect="off"
+          autoCapitalize="off"
         />
       ))}
     </div>
