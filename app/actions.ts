@@ -27,8 +27,6 @@ export async function submitEvents1Answers(answers: Events1Answers) {
     eventQuestionAnswer.payload
   ) as Required<Events1Answers>;
 
-  console.log({ answers, expectedAnswers });
-
   const results = [
     difference(answers[0], expectedAnswers[0]).length === 0,
     answers[1] === expectedAnswers[1],

@@ -9,7 +9,7 @@ type Props = {
   answer: Answers[0];
 };
 
-const defaultAnswer = ["", "", "", ""];
+const defaultAnswer = ["", "", ""];
 
 export default function Question1({ onAnswer, answer = defaultAnswer }: Props) {
   const handleChange = (index: number, value: string) => {
@@ -25,7 +25,7 @@ export default function Question1({ onAnswer, answer = defaultAnswer }: Props) {
         <p>
           以下のJavaScriptのコードについて、
           <Code>?</Code>
-          の部分を任意の英数字に置き換えて、有効となるものを4つ挙げてください。
+          の部分を任意の英数字に置き換えて、有効となるものを3つ挙げてください。
         </p>
         <p>
           実行については、ファイル名を
