@@ -47,6 +47,8 @@ export default function Question1({ onAnswer, answer = defaultAnswer }: Props) {
           className="mb-2"
           autoCorrect="off"
           autoCapitalize="off"
+          spellCheck="false"
+          pattern="[a-zA-Z0-9]+"
         />
       ))}
     </div>

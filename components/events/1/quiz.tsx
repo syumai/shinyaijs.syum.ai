@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, FormEventHandler } from "react";
 import { Button } from "@/components/ui/button";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
@@ -46,7 +46,8 @@ export default function Quiz() {
     [currentQuestion, setAnswers]
   );
 
-  const handleSubmit = async () => {
+  const handleSubmit: FormEventHandler = async (e) => {
+    e.preventDefault();
     if (currentQuestion < 3) {
       setCurrentQuestion((prev) => prev + 1);
     } else {
@@ -71,14 +72,12 @@ export default function Quiz() {
       <h1 className="text-2xl font-bold mb-4">
         Shinyai.js 第1回 JavaScriptクイズ {currentQuestion + 1}/4
       </h1>
-      {questions[currentQuestion]}
-      <Button
-        onClick={handleSubmit}
-        className="mt-4"
-        disabled={isEmpty(answers[currentQuestion])}
-      >
-        {currentQuestion < 3 ? "次へ" : "回答を送信"}
-      </Button>
+      <form onSubmit={handleSubmit}>
+        {questions[currentQuestion]}
+        <Button className="mt-4" disabled={isEmpty(answers[currentQuestion])}>
+          {currentQuestion < 3 ? "次へ" : "回答を送信"}
+        </Button>
+      </form>
     </div>
   );
 }
