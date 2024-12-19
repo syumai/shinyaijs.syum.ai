@@ -11,8 +11,13 @@ type Result = {
   score: number;
 };
 
+const answerUrls: Record<number, string> = {
+  1: "https://blog.syum.ai/entry/2024/12/19/094136",
+};
+
 export default function Result({ result, eventId }: Props) {
   const url = `https://x.com/intent/tweet?url=https://shinyaijs.syum.ai/events/${eventId}&text=私のShinyai.js第${eventId}回のJavaScriptクイズのスコアは${result.score}/${result.results.length}でした！&hashtags=shinyaijs`;
+  const answerUrl = answerUrls[eventId];
   return (
     <div className="container mx-auto px-4 py-8 text-center space-y-4 max-w-md">
       <h1 className="text-2xl font-bold">クイズ結果</h1>
@@ -35,11 +40,25 @@ export default function Result({ result, eventId }: Props) {
           </li>
         ))}
       </ul>
+
       <Button asChild>
         <a href={url} target="_blank" rel="noopener noreferrer">
-          Xでシェアする
+          結果をXでシェアする
         </a>
       </Button>
+
+      {answerUrl && (
+        <div>
+          <a
+            href={answerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            解答・解説を読む
+          </a>
+        </div>
+      )}
     </div>
   );
 }
